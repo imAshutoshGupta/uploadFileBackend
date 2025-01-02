@@ -22,6 +22,6 @@ const documentUpload = new mongoose.Schema({
         type: Number,
         required: false,
     },
-})
+}, { timestamps: true })
 const Document = mongoose.model('Document', documentUpload)
 module.exports = Document

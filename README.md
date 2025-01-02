@@ -1,4 +1,4 @@
-# MERN Project README
+# Docunent Uploader Project
 
 ## Table of Contents
 <!-- 
@@ -25,7 +25,7 @@ This is a MERN (MongoDB, Express, React, Node.js) project that helps you build a
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo-name.git`
+1. Clone the repository: `git clone https://github.com/imAshutoshGupta/uploadFileBackend.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 
@@ -38,21 +38,22 @@ The project is divided into two main directories: `client` and `server`.
 
 ## Features
 
-* [Feature 1]: Briefly describe the feature and its purpose.
-* [Feature 2]: Briefly describe the feature and its purpose.
+* 1 : User Registration: Allow new users to sign up with their details (e.g., username, email, 
+password).
+* 2 : User Login: Implement a login system that authenticates users with their credentials .
+* 3 : User Logout: Enable users to log out of their accounts securely.
+* 4 : Dashboard: After login, the user should see a dashboard displaying:
+       A list of previously uploaded documents (if any).
+       Options to view individual documents.
+       An option to upload new documents.
+* 5 : Document Upload: Provide a file upload functionality to allow users to upload new 
+documents
+* 6 : Document Viewing: Display uploaded documents in a readable format (e.g., text, PDF 
+viewer).
 
-## API Documentation
+## Additional Features
 
-The API documentation can be found at [API documentation URL].
-
-## Database Schema
-
-The database schema can be found at [database schema URL].
-
-## Contributing
-
-Contributions are welcome! Please submit a pull request with a detailed description of the changes.
-
-## License
-
-This project is licensed under the [license name] license.
+* 1 : Add pagination and a search bar for the document list.
+* 2 : Added a Admin role (hardcoded as requested)
+* 3 : Added forgot password and reset password functionality using link sent on your email.
+* 4 : File types and file size validation.
