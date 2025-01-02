@@ -57,3 +57,4 @@ viewer).
 * 2 : Added a Admin role (hardcoded as requested)
 * 3 : Added forgot password and reset password functionality using link sent on your email.
 * 4 : File types and file size validation.
+* 5 : Using Cloud storage for documents - Cloudinary
