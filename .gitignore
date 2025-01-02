@@ -1,0 +1,12 @@
+node_modules/
+config.env
+coverage/
+logs/
+*.log
+# *.env
+.DS_Store
+.vscode/
+*.vscode/
+*.idea/
+*.iml
+*.gitignore.swp
