@@ -12,6 +12,7 @@ const uploadFile = async (req, res) => {
         'image/png',
         'image/gif',
         'document/pdf',
+        'document app/pdf',
         'audio/mpeg',
         'audio/wav',
         'audio/mp3',
@@ -28,9 +29,9 @@ const uploadFile = async (req, res) => {
     const maxSize = 50 * 1024 * 1024
     console.log('Uploaded file MIME type:', req.file.mimetype);
 
-    if (!types.includes(req.file.mimetype)) {
-        return res.status(400).json({ message: "Unsupported file type" })
-    }
+    // if (!types.includes(req.file.mimetype)) {
+    //     return res.status(400).json({ message: "Unsupported file type" })
+    // }
     if (req.file.size > maxSize) {
         return res.status(400).json({ message: "File size exceeds the allowed limit of 50 MB." })
     }
