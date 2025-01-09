@@ -12,7 +12,7 @@ app.use(cookieParser())
 
 const corsOptions = {
     origin: ['http://localhost:5173', 'https://upload-file-frontend-rust.vercel.app'],
-    methods: 'GET,POST,PUT,DELETE',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true, 
     allowedHeaders: ['Content-Type', 'Authorization'],
 }
