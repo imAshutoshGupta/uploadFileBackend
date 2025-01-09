@@ -13,10 +13,8 @@ exports.resetPassword = async (req, res) => {
         if (!decoded) {
             return res.status(400).json({ message: "Invalid token" })
         }
-        console.log(decoded);
-
+    
         const user = await User.findOne({ email: decoded.email })
-        console.log("User found:", user);
         if (!user) {
             return res.status(400).json({ message: 'User not found' });
         }

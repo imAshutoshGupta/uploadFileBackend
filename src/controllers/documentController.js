@@ -4,7 +4,6 @@ const cloudinary = require('../config/cloudinary')
 exports.viewFiles = async (req, res) => {
     try {
         const documentId = req.params.id
-        console.log(documentId)
         
         const document = await Document.findById(documentId).populate('user_id', 'email username')
         if (!document) {
@@ -23,7 +22,6 @@ exports.viewFiles = async (req, res) => {
 exports.deleteFile = async (req, res) => {
     try {
         const documentId = req.params.id
-        console.log(documentId)
         const document = await Document.findById(documentId)
         if (!document) {
             return res.status(404).json({ message: "Document not found" })

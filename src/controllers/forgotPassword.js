@@ -15,7 +15,6 @@ exports.forgotPassword = async (req, res) => {
             return res.status(400).json({ message: "User not found" })
         }
         const resetToken = jwt.sign({ userId: user._id, email: user.email }, process.env.JWT_SECRET_KEY, { expiresIn: '10m' })
-        console.log("Generated Reset Token:", resetToken);
         const resetUrl = `${process.env.BASE_URL}/resetPassword/${resetToken}`;
 
         const mailOptions = {

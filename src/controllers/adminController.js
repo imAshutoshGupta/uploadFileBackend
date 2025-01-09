@@ -11,10 +11,8 @@ exports.adminUser = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
     const userId = req.params.id
-    console.log(userId)
     try {
         const delUser = await User.findByIdAndDelete(userId)
-        console.log(delUser);
         if (!delUser) {
             return res.status(404).json({ message: "User not found" })
         }
