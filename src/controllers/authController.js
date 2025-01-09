@@ -28,7 +28,7 @@ exports.signup = async (req, res) => {
             password: hashedPassword
         })
         await newUser.save()
-        
+
         res.status(201).json({ message: "User registered successfully" })
     } catch (error) {
         console.error(error)
@@ -42,12 +42,12 @@ exports.login = async (req, res) => {
 
         if (!email || !password) {
             return res.status(400).json({ message: "Please provide both email and password" })
-          }
+        }
         const userExists = await User.findOne({ email })
         if (!userExists) {
             return res.status(400).json({ message: "Invalid credentials" })
         }
-    
+
         const matchPassword = await bcrypt.compare(password, userExists.password)
         if (!matchPassword) {
             return res.status(400).json({ message: "Invalid credentials" })
@@ -56,9 +56,10 @@ exports.login = async (req, res) => {
         const token = jwt.sign({ userId: userExists._id }, process.env.JWT_SECRET_KEY, { expiresIn: '1h' })
         res.cookie('token', token, {
             httpOnly: true,
-            sameSite: 'None',
-            maxAge: 3600000
-        })
+            // secure: false, 
+            sameSite: 'lax',
+            maxAge: 3600000, 
+        });
         res.status(200).json({ message: "Login successful", token })
     } catch (error) {
         res.status(500).json({ message: "Server error" })
@@ -67,7 +68,11 @@ exports.login = async (req, res) => {
 
 exports.logout = async (req, res) => {
     try {
-        res.clearCookie('token')
+        res.clearCookie('token', {
+            httpOnly: true,
+            sameSite: 'lax',
+        });
+
         res.status(200).json({ message: "Logout successful" })
     } catch (error) {
         res.status(500).json({ message: "Server error" })
