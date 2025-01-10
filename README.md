@@ -1,15 +1,7 @@
-# Docunent Uploader Project
+# Cloud Vault
 
-## Table of Contents
-<!-- 
-1. [Project Overview](#project-overview)
-2. [Getting Started](#getting-started)
-3. [Project Structure](#project-structure)
-4. [Features](#features)
-5. [API Documentation](#api-documentation)
-6. [Database Schema](#database-schema)
-7. [Contributing](#contributing)
-8. [License](#license) -->
+## Live Demo
+[Cloud Vault](https://cloud-vault-sigma.vercel.app)
 
 ## Project Overview
 
@@ -20,7 +12,6 @@ This is a MERN (MongoDB, Express, React, Node.js) project that helps you build a
 ### Prerequisites
 
 * Node.js (version 14 or higher)
-* MongoDB (version 4 or higher)
 * npm (version 6 or higher)
 
 ### Installation
@@ -31,7 +22,7 @@ This is a MERN (MongoDB, Express, React, Node.js) project that helps you build a
 
 ## Project Structure
 
-The project is divided into two main directories: `client` and `server`.
+The project is divided into two main directories: `frontend` and `backend`.
 
 * `frontend`: Contains the React frontend code.
 * `backend`: Contains the Express backend code.
@@ -50,11 +41,3 @@ password).
 documents
 * 6 : Document Viewing: Display uploaded documents in a readable format (e.g., text, PDF 
 viewer).
-
-## Additional Features
-
-* 1 : Add pagination and a search bar for the document list.
-* 2 : Added a Admin role (hardcoded as requested)
-* 3 : Added forgot password and reset password functionality using link sent on your email.
-* 4 : File types and file size validation.
-* 5 : Using Cloud storage for documents - Cloudinary
