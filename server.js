@@ -24,6 +24,19 @@ app.use((req, res, next) => {
   next()
 })
 
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://cloud-vault-sigma.vercel.app');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.send();
+});
+
+app.use((req, res, next) => {
+console.log('CORS headers set for:', req.method, req.url);
+next();
+});
+
 app.use(express.json())
 app.use(cookieParser())
 
