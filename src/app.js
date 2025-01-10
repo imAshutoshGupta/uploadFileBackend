@@ -8,10 +8,8 @@ const adminRoute = require('./routes/admin.js')
 const app = express()
 
 const corsOptions = {
-    origin: ['http://localhost:5173', 'https://upload-file-frontend-rust.vercel.app'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-    credentials: true, 
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+    origin: ['http://localhost:5173', ''],
+    credentials: true,  
 }
 
 app.use(cors(corsOptions))
