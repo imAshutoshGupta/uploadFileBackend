@@ -8,7 +8,7 @@ const adminRoute = require('./routes/admin.js')
 const app = express()
 
 const corsOptions = {
-    origin: ['http://localhost:5173', ''],
+    origin: ['http://localhost:5173', 'https://cloud-vault-sigma.vercel.app'],
     credentials: true,  
 }
 
