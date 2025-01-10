@@ -7,13 +7,15 @@ const adminRoute = require('./routes/admin.js')
 
 const app = express()
 
-const corsOptions = {
-    origin: ['http://localhost:5173', 'https://cloud-vault-sigma.vercel.app'],
-    credentials: true,  
-}
+app.use(cors({
+    origin: 'https://cloud-vault-sigma.vercel.app', 
+    credentials: true,
+}))
 
-app.use(cors(corsOptions))
-app.options('*', cors(corsOptions))
+app.options('*', cors({
+    origin: 'https://cloud-vault-sigma.vercel.app',
+    credentials: true,
+}))
 app.use(express.json())
 app.use(cookieParser()) 
 
